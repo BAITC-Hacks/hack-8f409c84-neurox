@@ -1,0 +1,15 @@
+weights:
+  budget_fit: 0.30
+  semantic_fit: 0.50
+  language_fit: 0.10
+  hours_fit: 0.10
+quality_penalty: 0.015
+similarity_threshold: 0.90
+stop_phrases:
+  - отличный выбор
+  - идеально подойдёт
+  - для вашего мероприятия
+  - профессионал своего дела
+  - высокое качество
+  - индивидуальный подход
+  - не пожалеете

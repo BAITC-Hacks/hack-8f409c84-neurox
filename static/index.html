@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alem Match — осознанный выбор подрядчика</title>
+<style>
+:root{--ink:#182721;--muted:#67746e;--paper:#f5f5ee;--green:#275c49;--line:#dadfd6}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{max-width:1300px;margin:auto;padding:26px 38px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.logo{font-weight:800;font-size:23px;letter-spacing:-1px}.logo b{display:inline-grid;place-items:center;background:var(--green);color:white;width:32px;height:32px;margin-right:10px;border-radius:10px}
+header span{font-size:12px;letter-spacing:1.6px;color:var(--muted);text-transform:uppercase}
+main{max-width:1300px;padding:45px 38px;margin:auto}.intro{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:32px}
+h1{font-size:clamp(30px,4vw,49px);line-height:1.08;letter-spacing:-1.8px;margin:12px 0 20px;max-width:650px}h2{font-size:24px;line-height:1.25;margin:0 0 12px}h3{font-size:22px;margin:12px 0 4px}.eyebrow{color:var(--green);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.intro p{color:var(--muted);max-width:600px;margin:0}.dataset{flex-shrink:0;text-align:right;font-size:13px;color:var(--muted)}.dataset strong{display:block;font-size:32px;color:var(--green)}
+.layout{display:grid;grid-template-columns:310px minmax(0,1fr);gap:28px;align-items:start}
+form{background:#fff;border:1px solid var(--line);padding:24px;border-radius:18px;position:sticky;top:20px}
+label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}input,select{font:inherit;width:100%;border:1px solid #cdd5cc;background:#fff;padding:11px;border-radius:8px;color:var(--ink);min-width:0}
+input:focus,select:focus,button:focus-visible{outline:3px solid #a6c6b2;outline-offset:2px}.field{margin-bottom:17px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+small{color:var(--muted);font-size:12px}.optional{border-top:1px solid var(--line);padding-top:16px;margin-top:20px}
+button{border:0;background:var(--green);color:white;font:600 14px system-ui;padding:14px 20px;border-radius:8px;cursor:pointer;width:100%}button:disabled{opacity:.55;cursor:wait}
+.secondary{background:#e7eee6;color:var(--green);width:auto}.banner{padding:23px;border-radius:14px;margin-bottom:22px;border:1px solid #c9dbcd;background:#e9f1e8}
+.banner p{margin:0;font-size:14px}.banner.NO_CATEGORY_IN_CITY{background:#edf0fb;border-color:#cfd7ef;color:#334479}.banner.NONE_PASS_CONDITIONS{background:#fff0db;border-color:#e9c58d;color:#765121}.banner.INVALID_INPUT{background:#fae6e4;color:#8a3329}
+.cards{display:grid;gap:16px}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:24px}.cardtop{display:flex;justify-content:space-between;gap:10px;align-items:start}
+.badge{font-size:11px;font-weight:600;padding:4px 9px;border-radius:20px;background:#edf3eb;color:#40644d}.badge.synthetic{background:#f3edf9;color:#6c4c85}
+.meta{font-size:13px;color:var(--muted)}.price{font-size:25px;font-weight:700;white-space:nowrap;letter-spacing:-.8px}.price small{font-weight:400;display:block;text-align:right;letter-spacing:0}
+.explanation{font-size:15px;background:#f6f7f2;border-left:3px solid #91af80;padding:14px 16px;margin:18px 0 0;border-radius:0 8px 8px 0}
+.note{font-size:12px;color:#866238;margin:12px 0 0}.hints{padding:22px 0;border-bottom:1px solid var(--line)}.hints h3{font-size:16px}.hints p{font-size:14px;margin:9px 0;color:#526357}
+details{margin:22px 0;font-size:14px}summary{cursor:pointer;font-weight:600}pre{overflow:auto;background:#e9eee7;padding:18px;border-radius:10px;font-size:12px;max-height:380px}
+.compare{background:white;border:1px solid var(--line);padding:20px;border-radius:14px;margin-top:22px}.compare h3{font-size:17px;margin:0 0 12px}.comparebar{display:flex;gap:12px}.comparebar input{max-width:200px}.comparison{margin-top:20px}.comparison p{font-size:14px}
+footer{max-width:1300px;margin:auto;padding:22px 38px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between}a{color:var(--green)}
+.empty{padding:50px 30px;text-align:center;border:1px dashed #bac7b9;border-radius:16px;color:var(--muted)}.loading{opacity:.6}
+@media(max-width:850px){.layout{grid-template-columns:1fr}form{position:static}.intro{display:block}.dataset{display:none}header,main{padding:22px}h1{letter-spacing:-1px}.cardtop{flex-wrap:wrap}.price small{text-align:left}header span{font-size:10px}.comparebar{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header><div class="logo"><b>а</b> alem match</div><span>HackAlem AI · кейс 79-lite</span></header>
+<main>
+<section class="intro"><div><div class="eyebrow">Меньше поиска. Больше ясности.</div><h1>Подрядчики, чей выбор<br>можно объяснить.</h1><p>До трёх вариантов под ваш бюджет и дату. Показываем факты, различия и причины, если подходящих меньше.</p></div><div class="dataset"><strong id="total">—</strong>профилей в каталоге<br>Алматы · Астана · Зарубежье</div></section>
+<div class="layout">
+<form id="search">
+<div class="eyebrow" style="margin-bottom:20px">01 / Ваше мероприятие</div>
+<div class="field"><label for="city">Город</label><select id="city" name="city" required></select></div>
+<div class="field"><label for="date">Дата мероприятия</label><input id="date" name="date" type="date" min="2026-09-23" max="2026-12-31" value="2026-10-01" required></div>
+<div class="field"><label for="event">Тип мероприятия</label><select id="event" name="event" required></select></div>
+<div class="field"><label for="category">Категория подрядчика</label><select id="category" name="category" required></select></div>
+<div class="field"><label for="budget">Бюджет, ₸</label><input id="budget" name="budget" type="number" value="1000000" min="1" max="1000000000" step="1" required><small>Сравниваем с начальной ценой за мероприятие</small></div>
+<div class="optional"><div class="pair"><div class="field"><label for="hours">Часов <small>необяз.</small></label><input id="hours" name="hours" type="number" min="0.5" max="1000" step="0.5" placeholder="Любая"></div><div class="field"><label for="lang">Язык <small>необяз.</small></label><select id="lang" name="lang"><option value="">Любой</option></select></div></div></div>
+<button id="submit" type="submit" disabled>Подобрать подрядчиков ↗</button>
+</form>
+<section id="results" aria-live="polite" aria-busy="false"><div class="eyebrow" style="margin-bottom:16px">02 / Подбор с объяснением</div><div id="output"><div class="empty">Выберите параметры и нажмите «Подобрать подрядчиков».</div></div>
+<div class="compare" id="compare" hidden><h3>А если перенести дату?</h3><div class="comparebar"><input id="second-date" type="date" aria-label="Вторая дата" min="2026-09-23" max="2026-12-31" value="2026-10-02"><button type="button" class="secondary" id="compare-btn">Сравнить даты</button></div><small>Сохраняем параметры последнего подбора. Сравнение — отдельный блок.</small><div id="comparison" class="comparison"></div></div>
+</section>
+</div>
+</main>
+<footer><span>Данные хакатона · 23 сентября — 31 декабря 2026</span><a href="/docs">Документация API ↗</a></footer>
+<script>
+const $=id=>document.getElementById(id);
+let lastQuery=null;
+function el(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e}
+function render(data,target){
+ target.replaceChildren();
+ const banner=el('div',undefined,'banner '+data.status);banner.append(el('h2',data.title||'Ошибка'),el('p',data.summary||'Не удалось выполнить запрос'));target.append(banner);
+ const cards=el('div',undefined,'cards');
+ (data.cards||[]).forEach(c=>{
+  const article=el('article',undefined,'card'),top=el('div',undefined,'cardtop'),left=el('div');
+  left.append(el('span',c.badge,'badge'+(c.synthetic?' synthetic':'')),el('h3',c.anon_name),el('div',c.category+' · '+c.city,'meta'));
+  const price=el('div','от '+c.price,'price');price.append(el('small','за мероприятие'));top.append(left,price);article.append(top,el('p',c.explanation,'explanation'));
+  if(c.data_quality_note)article.append(el('p',c.data_quality_note,'note'));cards.append(article);
+ });target.append(cards);
+ if(data.hints?.length){const hints=el('aside',undefined,'hints');hints.append(el('h3','Что можно изменить'));data.hints.forEach(h=>hints.append(el('p',h)));target.append(hints)}
+ if(data.trace){const details=el('details');details.append(el('summary','Как мы это подобрали · '+data.timings_ms.total.toFixed(1)+' мс'),el('pre',JSON.stringify(data.trace,null,2)));target.append(details)}
+}
+async function post(path,body){const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const data=await r.json();if(!r.ok){const e=new Error(data.summary||'Ошибка сервера');e.data=data;throw e}return data}
+function readQuery(){const q=Object.fromEntries(new FormData($('search')));q.budget=Number(q.budget);q.hours=q.hours?Number(q.hours):null;q.lang=q.lang||null;return q}
+$('search').addEventListener('submit',async event=>{
+ event.preventDefault();$('submit').disabled=true;$('submit').textContent='Подбираем…';$('results').setAttribute('aria-busy','true');$('compare').hidden=true;$('comparison').replaceChildren();
+ try{const q=readQuery();const result=await post('/recommend',q);lastQuery=q;render(result,$('output'));$('compare').hidden=false}
+ catch(e){render(e.data||{status:'INVALID_INPUT',title:'Не удалось подключиться',summary:'Проверьте, что сервер запущен, и повторите запрос.'},$('output'))}
+ finally{$('submit').disabled=false;$('submit').textContent='Подобрать подрядчиков ↗';$('results').setAttribute('aria-busy','false')}
+});
+$('compare-btn').addEventListener('click',async()=>{
+ if(!lastQuery)return;const day=$('second-date');if(!day.value||!day.reportValidity())return;
+ $('compare-btn').disabled=true;
+ try{const result=await post('/compare-dates',{...lastQuery,second_date:day.value});const box=$('comparison');box.replaceChildren();
+ box.append(el('h3','Вторая дата: '+day.value));const other=el('div');render(result.second,other);box.append(other,el('h3','Изменения относительно '+lastQuery.date));
+ if(!result.diff.length)box.append(el('p','Состав тройки не изменился.'));
+ result.diff.forEach(d=>box.append(el('p',d.anon_name+': '+d.change+' — '+d.reason)));
+ }catch(e){$('comparison').replaceChildren(el('p',e.message))}finally{$('compare-btn').disabled=false}
+});
+(async()=>{
+ try{const r=await fetch('/meta');if(!r.ok)throw Error();const m=await r.json();
+ for(const [id,key] of [['city','cities'],['event','events'],['category','categories'],['lang','languages']])m[key].forEach(v=>{const o=el('option',v);o.value=v;$(id).append(o)});
+ $('city').value='Алматы';$('event').value='свадьба';$('category').value='Фотограф';$('total').textContent=m.profile_count;$('submit').disabled=false;
+ }catch(e){$('output').replaceChildren(el('p','Не удалось загрузить каталог. Проверьте сервер и обновите страницу.','banner INVALID_INPUT'))}
+})();
+</script>
+</body></html>
